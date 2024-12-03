@@ -36,7 +36,7 @@ export const functions = writable(null);
 
 export const banners: Writable<Banner[]> = writable([]);
 
-export const settings: Writable<Settings> = writable({});
+export const settings: Writable<Settings> = writable({ chatDirection: 'LTR' });
 
 export const showSidebar = writable(false);
 export const showSettings = writable(false);

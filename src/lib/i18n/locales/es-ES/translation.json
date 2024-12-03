@@ -47,7 +47,7 @@
 	"Admins have access to all tools at all times; users need tools assigned per model in the workspace.": "Admins tienen acceso a todas las herramientas en todo momento; los usuarios necesitan herramientas asignadas por modelo en el espacio de trabajo.",
 	"Advanced Parameters": "Parámetros Avanzados",
 	"Advanced Params": "Parámetros avanzados",
-	"All chats": "",
+	"All chats": "Todos los chats",
 	"All Documents": "Todos los Documentos",
 	"All models deleted successfully": "",
 	"Allow Chat Delete": "",
@@ -1002,7 +1002,7 @@
 	"Why?": "",
 	"Widescreen Mode": "Modo de pantalla ancha",
 	"Won": "",
-	"Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse text, while a lower value (e.g., 0.5) will generate more focused and conservative text. (Default: 0.9)": "",
+	"Works together with top-k. A higher value (e.g., 2.0) will lead to more diverse text, while a value of 1.0 disables this setting. (default: 1)": "",
 	"Workspace": "Espacio de trabajo",
 	"Workspace Permissions": "",
 	"Write a prompt suggestion (e.g. Who are you?)": "Escribe una sugerencia para un prompt (por ejemplo, ¿quién eres?)",
@@ -1023,4 +1023,5 @@
 	"Your entire contribution will go directly to the plugin developer; Open WebUI does not take any percentage. However, the chosen funding platform might have its own fees.": "Su contribución completa irá directamente a el desarrollador del plugin; Open WebUI no toma ningun porcentaje. Sin embargo, la plataforma de financiación elegida podría tener sus propias tarifas.",
 	"Youtube": "Youtube",
 	"Youtube Loader Settings": "Configuración del cargador de Youtube"
+}
 }
