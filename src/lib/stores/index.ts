@@ -193,10 +193,21 @@ type PromptSuggestion = {
 	title: [string, string];
 };
 
-type SessionUser = {
-	id: string;
-	email: string;
-	name: string;
-	role: string;
-	profile_image_url: string;
-};
+export interface SessionUser {
+    id: string;
+    email: string;
+    name: string;
+    role: string;
+    profile_image_url: string;
+    permissions?: {
+        workspace?: {
+            models?: boolean;
+            knowledge?: boolean;
+            prompts?: boolean;
+            tools?: boolean;
+        };
+        chat?: {
+            temporary?: boolean;
+        };
+    };
+}

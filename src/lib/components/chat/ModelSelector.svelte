@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { models, showSettings, settings, user, mobile, config } from '$lib/stores';
+	import { permissions } from '$lib/stores/permissions';
 	import { onMount, tick, getContext } from 'svelte';
 	import { toast } from 'svelte-sonner';
 	import Selector from './ModelSelector/Selector.svelte';
@@ -61,7 +62,7 @@
 			</div>
 
 			<!-- WINDSURF: For the first model (index 0), show the "+" button to allow adding more models -->
-			{#if selectedModelIdx === 0 && $user?.role === 'admin'}
+			{#if selectedModelIdx === 0 && $permissions.canAccessModels}
 				<div class="self-center mx-1 disabled:text-gray-600 disabled:hover:text-gray-600 -translate-y-[0.5px]">
 					<Tooltip content={$i18n.t('Add Model')}>
 						<!-- WINDSURF: When clicked, spread the existing models array and append an empty string 
@@ -87,12 +88,13 @@
 						</button>
 					</Tooltip>
 				</div>
-			{:else if selectedModelIdx !== 0 && $user?.role === 'admin'}
+			{:else if selectedModelIdx !== 0 && $permissions.canAccessModels}
 				<div class="self-center mx-1 disabled:text-gray-600 disabled:hover:text-gray-600 -translate-y-[0.5px]">
 					<Tooltip content={$i18n.t('Remove Model')}>
 						<!-- WINDSURF: When clicked, remove this model from the array using splice
 							Then reassign the array to trigger Svelte's reactivity -->
 						<button
+							class=" "
 							{disabled}
 							on:click={() => {
 								selectedModels.splice(selectedModelIdx, 1);
@@ -106,9 +108,9 @@
 								viewBox="0 0 24 24"
 								stroke-width="2"
 								stroke="currentColor"
-								class="size-3"
+								class="size-3.5"
 							>
-								<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+								<path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
 							</svg>
 						</button>
 					</Tooltip>
